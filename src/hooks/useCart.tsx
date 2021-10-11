@@ -1,4 +1,5 @@
 import { createContext, ReactNode, useContext, useState } from "react";
+import { useHistory } from "react-router";
 import { toast } from "react-toastify";
 import { api } from "../services/api";
 import { Product, Stock } from "../types";
@@ -17,11 +18,13 @@ interface CartContextData {
   addProduct: (productId: number) => Promise<void>;
   removeProduct: (productId: number) => void;
   updateProductAmount: ({ productId, amount }: UpdateProductAmount) => void;
+  finishOrder: () => void;
 }
 
 const CartContext = createContext<CartContextData>({} as CartContextData);
 
 export function CartProvider({ children }: CartProviderProps): JSX.Element {
+  const history = useHistory();
   const [cart, setCart] = useState<Product[]>(() => {
     const storagedCart = localStorage.getItem("@RocketShoes:cart");
 
@@ -111,9 +114,22 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
     }
   };
 
+  function finishOrder() {
+    toast.success("Compra efetuada com sucesso! Volte sempre!!");
+    localStorage.removeItem("@RocketShoes:cart");
+    setCart([]);
+    history.goBack();
+  }
+
   return (
     <CartContext.Provider
-      value={{ cart, addProduct, removeProduct, updateProductAmount }}
+      value={{
+        cart,
+        addProduct,
+        removeProduct,
+        updateProductAmount,
+        finishOrder,
+      }}
     >
       {children}
     </CartContext.Provider>

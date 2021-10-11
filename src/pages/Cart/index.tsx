@@ -16,7 +16,7 @@ interface Product {
 }
 
 const Cart = (): JSX.Element => {
-  const { cart, removeProduct, updateProductAmount } = useCart();
+  const { cart, removeProduct, updateProductAmount, finishOrder } = useCart();
 
   const cartFormatted = cart.map((product) => ({
     ...product,
@@ -106,7 +106,9 @@ const Cart = (): JSX.Element => {
       </ProductTable>
 
       <footer>
-        <button type="button">Finalizar pedido</button>
+        <button type="button" onClick={finishOrder}>
+          Finalizar pedido
+        </button>
 
         <Total>
           <span>TOTAL</span>

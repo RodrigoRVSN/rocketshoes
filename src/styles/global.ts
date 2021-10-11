@@ -1,7 +1,7 @@
-import { createGlobalStyle } from 'styled-components';
-import 'react-toastify/dist/ReactToastify.css';
+import { createGlobalStyle } from "styled-components";
+import "react-toastify/dist/ReactToastify.css";
 
-import background from '../assets/images/background.svg';
+import background from "../assets/images/background.svg";
 
 export default createGlobalStyle`
   * {
@@ -14,6 +14,7 @@ export default createGlobalStyle`
   body {
     background: #191920 url(${background}) no-repeat center top;
     -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
   }
 
   body, input, button {
@@ -28,5 +29,14 @@ export default createGlobalStyle`
 
   button {
     cursor: pointer;
+  }
+
+  ::-webkit-scrollbar{
+   background-color : #999;
+   height: 0.3rem;
+   width: 0.3rem;
+  }
+  ::-webkit-scrollbar-thumb{
+   background-color : #7159c1 ;
   }
 `;
