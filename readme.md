@@ -10,8 +10,9 @@
 
 <!--- #################### mudar badges #################### --->
 
-![image](https://user-images.githubusercontent.com/75763403/136817986-711b0c22-541c-45a6-886d-f29a3c6f0ea4.png)
-![image](https://user-images.githubusercontent.com/75763403/136818067-c7693ea8-cf00-4887-81f4-b59f241212ee.png)
+![image](https://user-images.githubusercontent.com/75763403/136854623-c729393f-debc-4541-bd97-c1ac4ec99be3.png)
+![image](https://user-images.githubusercontent.com/75763403/136854675-45ff2965-1efc-4518-bb31-c72aff7d4f04.png)
+![image](https://user-images.githubusercontent.com/75763403/136854696-a7fdd076-5694-48b4-babd-1ce63ab7ec1c.png)
 
 <!--- #################### mudar imagem exemplo #################### --->
 
